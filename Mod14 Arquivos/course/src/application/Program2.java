@@ -39,7 +39,7 @@ public class Program2 {
 			catch (IOException e) {
 				e.printStackTrace();
 			}
-		
+		}
 	}
 
 }
