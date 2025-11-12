@@ -27,7 +27,7 @@ public class Program {
 		String sourceFileStr = sc.nextLine();
 		
 		File sourceFile = new File (sourceFileStr);
-		String sourceFolderStr = sourceFile.getParent();
+		String sourceFolderStr = sourceFile.getParent() == null ? "." : sourceFile.getParent();
 		
 		boolean success = new File(sourceFile + "\\out").mkdir();
 		
@@ -51,7 +51,7 @@ public class Program {
 			try (BufferedWriter bw = new BufferedWriter(new FileWriter(targetFileStr))){
 				
 				for (Product item : product) {
-					bw.write(item.getName() + " , " + String.format("%.2f", item.total()));
+					bw.write(item.getName() + "," + String.format("%.2f", item.total()));
 					bw.newLine();
 				}
 				
